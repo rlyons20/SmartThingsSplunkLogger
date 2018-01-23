@@ -91,7 +91,7 @@ def doSubscriptions() {
 	subscribe(contacts,		"contact",			contactHandler)
 	subscribe(energymeters,		"energy",			energyHandler)
 	subscribe(humidities,		"humidity",			humidityHandler)
-	subscribe(lightSensor,		"illuminance",			illuminanceHandler)
+	subscribe(illuminances,		"illuminance",			illuminanceHandler)
 	subscribe(indicators,		"indicator",			indicatorHandler)
 	subscribe(location,		"location",			locationHandler)
 	subscribe(lockDevice,		"lock",				lockHandler)
