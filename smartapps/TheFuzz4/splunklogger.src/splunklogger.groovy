@@ -27,9 +27,9 @@ definition(
 	author: "Brian Keifer and Jason Hamilton",
 	description: "Log SmartThings events to a Splunk HTTP Event Collector server",
 	category: "Convenience",
-    iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
-    iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
-    iconX3Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png")
+	iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
+	iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
+	iconX3Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png")
 
 preferences {
 
@@ -83,30 +83,30 @@ def initialize() {
 }
 
 def doSubscriptions() {
-	subscribe(accelerations,		"acceleration",				accelerationHandler)
-	subscribe(alarms,				"alarm",					alarmHandler)
-	subscribe(batteries,			"battery",					batteryHandler)
-	subscribe(button,				"button",					buttonHandler)
-	subscribe(codetectors,			"carbonMonoxideDetector",	coHandler)
-	subscribe(contacts,				"contact",					contactHandler)
-	subscribe(energymeters,			"energy",					energyHandler)
-	subscribe(humidities,			"humidity",					humidityHandler)
-	subscribe(lightSensor,			"illuminance",				illuminanceHandler)
-	subscribe(indicators,			"indicator",				indicatorHandler)
-	subscribe(location,				"location",					locationHandler)
-	subscribe(lockDevice,			"lock",						lockHandler)
-	subscribe(modes,				"locationMode",				modeHandler)
-	subscribe(motions,				"motion",					motionHandler)
-	subscribe(musicplayers,			"music",					musicHandler)
-	subscribe(powermeters,			"power",					powerHandler)
-	subscribe(presences,			"presence",					presenceHandler)
-	subscribe(relays,				"relaySwitch",				relayHandler)
-	subscribe(smokedetectors,		"smokeDetector",			smokeHandler)
-	subscribe(switches,				"switch",					switchHandler)
-	subscribe(levels,				"level",					levelHandler)
-	subscribe(temperatures,			"temperature",				temperatureHandler)
-	subscribe(voltageMeasurement,	"voltage",					voltageHandler)
-	subscribe(waterdetectors,		"water",					waterHandler)
+	subscribe(accelerations,	"acceleration",			accelerationHandler)
+	subscribe(alarms,		"alarm",			alarmHandler)
+	subscribe(batteries,		"battery",			batteryHandler)
+	subscribe(button,		"button",			buttonHandler)
+	subscribe(codetectors,		"carbonMonoxideDetector",	coHandler)
+	subscribe(contacts,		"contact",			contactHandler)
+	subscribe(energymeters,		"energy",			energyHandler)
+	subscribe(humidities,		"humidity",			humidityHandler)
+	subscribe(lightSensor,		"illuminance",			illuminanceHandler)
+	subscribe(indicators,		"indicator",			indicatorHandler)
+	subscribe(location,		"location",			locationHandler)
+	subscribe(lockDevice,		"lock",				lockHandler)
+	subscribe(modes,		"locationMode",			modeHandler)
+	subscribe(motions,		"motion",			motionHandler)
+	subscribe(musicplayers,		"music",			musicHandler)
+	subscribe(powermeters,		"power",			powerHandler)
+	subscribe(presences,		"presence",			presenceHandler)
+	subscribe(relays,		"relaySwitch",			relayHandler)
+	subscribe(smokedetectors,	"smokeDetector",		smokeHandler)
+	subscribe(switches,		"switch",			switchHandler)
+	subscribe(levels,		"level",			levelHandler)
+	subscribe(temperatures,		"temperature",			temperatureHandler)
+	subscribe(voltageMeasurement,	"voltage",			voltageHandler)
+	subscribe(waterdetectors,	"water",			waterHandler)
 }
 
 def genericHandler(evt) {
@@ -197,7 +197,7 @@ def genericHandler(evt) {
 	def params = [
 	uri: "${http_protocol}://${splunk_host}:${splunk_port}/services/collector/event", headers: [ 'Authorization': "Splunk ${splunk_token}" ],
 		body: json ] log.debug params try { httpPostJson(params) } catch ( groovyx.net.http.HttpResponseException ex ) {
-			log.debug "Unexpected response error: ${ex.statusCode}" 
+		log.debug "Unexpected response error: ${ex.statusCode}" 
 		}
 	}
 }
@@ -277,7 +277,7 @@ def batteryHandler(evt) {
 	def params = [
 	uri: "${http_protocol}://${splunk_host}:${splunk_port}/services/collector/event", headers: [ 'Authorization': "Splunk ${splunk_token}" ],
 		body: json ] log.debug params try { httpPostJson(params) } catch ( groovyx.net.http.HttpResponseException ex ) {
-			log.debug "Unexpected response error: ${ex.statusCode}" 
+		log.debug "Unexpected response error: ${ex.statusCode}" 
 		}
 	}
 }
@@ -381,7 +381,7 @@ def lockHandler(evt) {
 	def params = [
 	uri: "${http_protocol}://${splunk_host}:${splunk_port}/services/collector/event", headers: [ 'Authorization': "Splunk ${splunk_token}" ],
 		body: json ] log.debug params try { httpPostJson(params) } catch ( groovyx.net.http.HttpResponseException ex ) {
-			log.debug "Unexpected response error: ${ex.statusCode}" 
+		log.debug "Unexpected response error: ${ex.statusCode}" 
 		}
 	}
 }
